@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="text-center p-5 bg-primary text-white rounded-4 shadow-lg">
+    <h1 class="display-4 mb-3">Welcome to Your Banking Portal</h1>
+    <p class="lead mb-4">Securely manage your finances with ease.</p>
+    <a href="{{ url_for('login') }}" class="btn btn-light btn-lg me-3">
+      <i class="bi bi-box-arrow-in-right me-2"></i>Login
+    </a>
+    <a href="{{ url_for('register') }}" class="btn btn-outline-light btn-lg">
+      <i class="bi bi-person-plus me-2"></i>Register
+    </a>
+  </div>
+
+  <div class="row mt-5">
+    <div class="col-md-4 text-center">
+      <i class="bi bi-piggy-bank-fill fs-1 text-primary mb-3"></i>
+      <h4>Save Smart</h4>
+      <p>Keep track of your savings effortlessly with our secure tools.</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <i class="bi bi-credit-card-2-front-fill fs-1 text-success mb-3"></i>
+      <h4>Manage Cards</h4>
+      <p>Easily add and control your credit and debit cards.</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <i class="bi bi-graph-up-arrow fs-1 text-warning mb-3"></i>
+      <h4>Track Spending</h4>
+      <p>Visualize your expenses and budget better every month.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

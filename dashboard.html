@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - BankApp{% endblock %}
+{% block content %}
+<div class="row align-items-center">
+  <div class="col-md-6">
+    <div class="card p-4 text-center shadow-sm">
+      <h2 class="text-success mb-3">
+        <i class="bi bi-person-circle me-2"></i> Welcome, {{ username }}!
+      </h2>
+      <p class="lead">Your current balance:</p>
+      <h3 class="text-primary">
+        <i class="bi bi-wallet2 me-2"></i> ₹{{ balance }}
+      </h3>
+    </div>
+  </div>
+  <div class="col-md-6 text-center">
+    <img src="{{ url_for('static', filename='images/dashboard.png') }}" alt="Dashboard Illustration" class="img-fluid rounded shadow-sm" />
+  </div>
+</div>
+{% endblock %}

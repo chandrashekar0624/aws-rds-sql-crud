@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Transfer Funds - BankApp{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card p-4 shadow-sm">
+      <h2 class="text-center text-info mb-4">
+        <i class="bi bi-arrow-right-arrow-left"></i> Transfer Funds
+      </h2>
+      <form method="POST" action="{{ url_for('transfer') }}">
+        <div class="mb-3">
+          <label for="receiver" class="form-label"><i class="bi bi-person-check"></i> Receiver Username</label>
+          <input type="text" id="receiver" name="receiver" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="amount" class="form-label"><i class="bi bi-currency-rupee"></i> Amount</label>
+          <input type="number" id="amount" name="amount" class="form-control" min="1" step="any" required />
+        </div>
+        <button type="submit" class="btn btn-info w-100 text-white">
+          <i class="bi bi-send"></i> Send Money
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Transaction History - BankApp{% endblock %}
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-header bg-success text-white d-flex align-items-center">
+    <i class="bi bi-receipt me-2"></i>
+    <h5 class="mb-0">Transaction History</h5>
+  </div>
+  <div class="card-body p-0">
+    {% if transactions %}
+    <table class="table table-striped mb-0">
+      <thead>
+        <tr>
+          <th scope="col">Date & Time</th>
+          <th scope="col">Sender</th>
+          <th scope="col">Receiver</th>
+          <th scope="col" class="text-end">Amount (₹)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for txn in transactions %}
+        <tr>
+          <td>{{ txn.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+          <td>{{ txn.sender_username }}</td>
+          <td>{{ txn.receiver_username }}</td>
+          <td class="text-end">{{ txn.amount }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+      <p class="text-center p-4">No transactions to show.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
